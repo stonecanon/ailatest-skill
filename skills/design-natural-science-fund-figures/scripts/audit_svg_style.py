@@ -22,6 +22,21 @@ def number(value: str | None, default: float = 0.0) -> float:
     return float(match.group(0)) if match else default
 
 
+def style_value(node: ET.Element, name: str) -> str:
+    """Read an SVG presentation attribute or its inline style equivalent."""
+    direct = node.get(name)
+    if direct:
+        return direct
+    style = node.get("style") or ""
+    for declaration in style.split(";"):
+        if ":" not in declaration:
+            continue
+        key, value = declaration.split(":", 1)
+        if key.strip().lower() == name.lower():
+            return value.strip()
+    return ""
+
+
 def audit(path: Path) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -38,11 +53,14 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
     if not texts:
         warnings.append("contains no SVG text elements")
     for index, node in enumerate(texts, start=1):
-        fill = (node.get("fill") or "").upper()
+        # SVG's default text paint is black; Matplotlib omits an explicit
+        # fill for black text, so treat a missing presentation value as the
+        # contract's #000000 rather than reporting a false error.
+        fill = (style_value(node, "fill") or "#000000").upper()
         if fill not in ALLOWED_TEXT_FILLS:
             errors.append(f"text {index} uses disallowed fill {fill or '[missing]'}")
-        family = node.get("font-family") or ""
-        if "Microsoft YaHei" not in family and "微软雅黑" not in family:
+        family = style_value(node, "font-family")
+        if "MICROSOFT YAHEI" not in family.upper() and "微软雅黑" not in family:
             errors.append(f"text {index} is missing Microsoft YaHei font stack")
 
     gaussian = root.findall(".//svg:feGaussianBlur", SVG_NS)

@@ -12,7 +12,7 @@
 
 后续 Skill 会继续按用途加入 `skills/`，例如科研写作、文献整理、数据分析、图表制作和其他实验性工具。
 
-配套示意图：[`科研证据链流程图`](examples/draw-process-flowchart/)、[`基金绘图工作链`](examples/design-natural-science-fund-figures/)、[`基金写作核心逻辑`](examples/write-natural-science-fund-proposals/)。
+配套示意图：[`科研证据链流程图`](examples/draw-process-flowchart/)、[`基金科研图件核心逻辑`](examples/design-natural-science-fund-figures/)、[`基金写作核心逻辑`](examples/write-natural-science-fund-proposals/)。
 
 ## 快速使用
 

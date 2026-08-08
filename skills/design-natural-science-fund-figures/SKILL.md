@@ -59,7 +59,7 @@ Create proposal figures as compact scientific arguments, not decorative infograp
 
 ## Bundled example
 
-See [assets/figure-workflow.png](assets/figure-workflow.png) for a reconstructed example of the figure-design workflow. The example is synthetic and does not use a user-supplied figure.
+See [assets/fund-figure-logic.png](assets/fund-figure-logic.png) for a reconstructed example of a proposal-figure argument: scientific questions → research contents → method/evidence → expected contributions. The example is synthetic and does not use a user-supplied figure.
 
 ## Resources
 
