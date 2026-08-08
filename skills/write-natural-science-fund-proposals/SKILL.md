@@ -66,7 +66,7 @@ Write as a proposal co-author and final editor. Preserve the user's latest docum
 
 ## Bundled example
 
-See [assets/proposal-core-logic.png](assets/proposal-core-logic.png) for a reconstructed diagram of the proposal's core argument chain. The example is synthetic and does not use a user-supplied proposal or project data.
+See [assets/proposal-core-logic.png](assets/proposal-core-logic.png) for a reconstructed diagram of the proposal's argument skeleton: basis/gap → two scientific questions → three research contents and evidence → contribution and application boundary. The example is synthetic and does not use a user-supplied proposal or project data.
 
 ## Resources
 
