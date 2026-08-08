@@ -136,29 +136,31 @@ def draw_basis(ax, x: float, y: float, w: float, h: float, basis: dict,
     ax.text(qx, body_y + 0.50, "科学问题", ha="left", va="center", color=BLACK,
             fontsize=9.4, fontproperties=bold, zorder=4)
     ax.text(qx, body_y + 0.28, basis["questions"][0], ha="left", va="center",
-            color=BLACK, fontsize=7.4, fontproperties=regular, zorder=4)
+            color=BLACK, fontsize=8.1, fontproperties=regular, zorder=4)
     ax.text(qx, body_y + 0.08, basis["questions"][1], ha="left", va="center",
-            color=BLACK, fontsize=7.4, fontproperties=regular, zorder=4)
+            color=BLACK, fontsize=8.1, fontproperties=regular, zorder=4)
 
 
 def draw_content(ax, x: float, y: float, w: float, h: float, item: dict,
                  number: int, regular: FontProperties, bold: FontProperties) -> None:
-    content_h = 1.35
-    method_h = 1.15
+    content_h = 1.58
+    method_h = 1.35
     box(ax, x, y + h - content_h, w, content_h, face=WHITE, edge=BLUE_BORDER,
         lw=1.3, radius=0.07)
     header(ax, x, y + h - 0.48, w, 0.48, item["title"], PRIMARY_BLUE, "content", bold, 12.1)
-    ax.text(x + w / 2, y + h - 0.91, item["content"], ha="center", va="center",
+    ax.text(x + 0.25, y + h - 0.91, item["content"], ha="left", va="center",
             color=BLACK, fontsize=9.8, linespacing=1.35, fontproperties=bold, zorder=4)
+    ax.text(x + 0.25, y + h - 1.39, item["detail"], ha="left", va="center",
+            color=BLACK, fontsize=8.1, linespacing=1.35, fontproperties=regular, zorder=4)
     arrow(ax, x + w / 2, y + h - content_h - 0.05, x + w / 2,
           y + h - content_h - 0.28, color=METHOD_ORANGE, scale=11, lw=1.5)
     box(ax, x, y, w, method_h, face=PALE_ORANGE, edge=METHOD_ORANGE,
         lw=1.0, radius=0.07)
     icon(ax, "method", x + 0.27, y + method_h - 0.27, METHOD_ORANGE)
-    ax.text(x + w / 2 + 0.08, y + method_h - 0.27, "研究方案与证据",
-            ha="center", va="center", color=BLACK, fontsize=9.2,
+    ax.text(x + 0.65, y + method_h - 0.27, "研究方案与证据",
+            ha="left", va="center", color=BLACK, fontsize=9.2,
             fontproperties=bold, zorder=4)
-    ax.text(x + w / 2, y + 0.42, item["method"], ha="center", va="center",
+    ax.text(x + 0.25, y + 0.47, item["method"], ha="left", va="center",
             color=BLACK, fontsize=8.2, linespacing=1.35, fontproperties=regular, zorder=4)
 
 
@@ -171,7 +173,7 @@ def draw_outcomes(ax, x: float, y: float, w: float, h: float, outcomes: list[dic
         ax.text(xx, y + h - 0.92, outcome["label"], ha="left", va="center", color=BLACK,
                 fontsize=9.9, fontproperties=bold, zorder=4)
         ax.text(xx, y + h - 1.08, outcome["body"], ha="left", va="center", color=BLACK,
-                fontsize=8.1, fontproperties=regular, zorder=4)
+                fontsize=8.5, fontproperties=regular, zorder=4)
         if i < 2:
             ax.plot([xx + w / 3 - 0.22, xx + w / 3 - 0.22], [y + 0.22, y + h - 0.75],
                     color=PALE_BLUE, linewidth=1.0, zorder=2)
@@ -195,7 +197,7 @@ def draw(config: dict, output_dir: Path, stem: str) -> None:
     draw_basis(ax, basis_x, basis_y, basis_w, basis_h, config["basis"], regular, bold)
     arrow(ax, 7.60, 6.17, 7.60, 6.04, color=SCIENTIFIC_RED, scale=12, lw=1.6)
 
-    content_y, content_h = 3.05, 2.96
+    content_y, content_h = 2.85, 3.20
     content_x, content_w, content_gap = 0.90, 3.66, 0.58
     for i, item in enumerate(config["contents"][:3]):
         draw_content(ax, content_x + i * (content_w + content_gap), content_y,
