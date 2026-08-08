@@ -227,7 +227,14 @@ def draw_horizontal(stages: list[dict], regular: FontProperties, bold: FontPrope
             ax.text(x + 0.23, y - 0.34, group.get("body", ""), ha="left", va="center",
                     fontsize=12, fontproperties=bold, color=BLACK, zorder=3)
             if j < len(groups) - 1:
-                rule(x + 0.20, x + panel_w - 0.20, y - step + 0.12)
+                # Put the divider at the geometric centre of the whitespace
+                # between this group's body and the next group's label.  A
+                # fixed offset from the next label makes the line look
+                # attached to that label, especially in three-group panels.
+                next_label_y = y - step
+                current_body_y = y - 0.34
+                divider_y = (current_body_y + next_label_y) / 2
+                rule(x + 0.20, x + panel_w - 0.20, divider_y)
         if stage.get("note"):
             ax.text(x + 0.23, panel_y + 0.24, stage["note"], ha="left", va="center",
                     fontsize=10.6, fontproperties=regular, color=MUTED, zorder=3)
