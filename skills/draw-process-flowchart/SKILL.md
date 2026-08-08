@@ -94,6 +94,10 @@ Inspect the standalone figure at 100% and then inspect the rendered manuscript p
 
 For DOCX delivery, use the document-rendering skill’s render → inspect-every-page loop. Re-render after every geometry or font change. Preserve the original manuscript and write the revised file to a new output path.
 
+## Visual example
+
+The bundled image at [assets/research-evidence-flow.png](assets/research-evidence-flow.png) is a reconstructed five-stage research evidence-chain example. It is synthetic demonstration content, not a user-supplied figure or project data.
+
 ## Invocation examples
 
 - “Use `$draw-process-flowchart` to turn this research method into a five-stage journal figure.”
