@@ -1,0 +1,4 @@
+interface:
+  display_name: "自然科学基金写作"
+  short_description: "按个人风格修改基金正文并完成逻辑、文献、成果与排版终稿核查"
+  default_prompt: "使用 $write-natural-science-fund-proposals 按我的风格修改自然科学基金正文并完成终稿核查。"

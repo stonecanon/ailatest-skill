@@ -1,0 +1,4 @@
+interface:
+  display_name: "自然科学基金绘图"
+  short_description: "统一生成基金技术路线图、研究逻辑图、正文插图及图文一致性核查"
+  default_prompt: "使用 $design-natural-science-fund-figures 按我的基金图表规范绘制或修改技术路线图。"

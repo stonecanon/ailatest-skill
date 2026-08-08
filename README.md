@@ -7,10 +7,12 @@
 | Skill | 方向 | 用途 |
 | --- | --- | --- |
 | [`draw-process-flowchart`](skills/draw-process-flowchart/) | 科研绘图 | 绘制可变阶段的论文级流程图，并导出 PNG、SVG、PDF |
+| [`design-natural-science-fund-figures`](skills/design-natural-science-fund-figures/) | 科研绘图 | 生成基金技术路线图、研究逻辑图并核查图文一致性 |
+| [`write-natural-science-fund-proposals`](skills/write-natural-science-fund-proposals/) | 科研写作 | 围绕科学问题组织基金正文、证据链与终稿核查 |
 
 后续 Skill 会继续按用途加入 `skills/`，例如科研写作、文献整理、数据分析、图表制作和其他实验性工具。
 
-配套示意图：[`科研证据链流程图`](examples/draw-process-flowchart/)。
+配套示意图：[`科研证据链流程图`](examples/draw-process-flowchart/)、[`基金绘图工作链`](examples/design-natural-science-fund-figures/)、[`基金写作核心逻辑`](examples/write-natural-science-fund-proposals/)。
 
 ## 快速使用
 
