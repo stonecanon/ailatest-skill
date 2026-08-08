@@ -1,0 +1,4 @@
+interface:
+  display_name: "通用流程图绘制"
+  short_description: "绘制并校验可变阶段的论文级流程图、字体、版式与多格式导出"
+  default_prompt: "Use $draw-process-flowchart to design and export a publication-ready process flowchart with the requested stage count and layout."
